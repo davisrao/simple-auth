@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Authentication</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/bootstrap"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+  <link rel="shortcut icon" href="/static/favicon.ico">
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+  <nav class="navbar navbar-expand navbar-dark bg-primary">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">
+          <span>AuthApp</span>
+        </a>
+      </div>
+      {% if not g.user %}
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/signup">Sign up</a>
+        <a class="nav-item nav-link" href="/login">Log In</a>
+      </div>
+      {% else %}
+        <form action="/logout" method="POST">
+          {{ g.csrf_form.hidden_tag() }}
+          <button class="btn btn-primary">Logout</button>
+        </form>
+
+        {% endif %}
+
+    </div>
+  </nav>
+
+  <div class="container justify-content-center d-flex">
+
+
+    {% block content %}
+    {% endblock %}
+
+  </div>
+</body>
+
+</html>
