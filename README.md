@@ -18,6 +18,7 @@ INSTALLING DEPENDENCIES:
 * create test database in cmd line (test files will connect to this DB but .env needs to be created as well per last step here): createdb simple_auth_test
 * run seed.py with python to create latest db tables from models file (ensure this happened with PSQL -- db should just have users table with id, email, username, pwd)
 * create .env file with SECRET_KEY=abc123 & DATABASE_URL=postgresql:///warbler
+* create gitignore file with __pycache__, .env, and /venv
 
 TEST NOTES:
 * Tests exist for user model (repr, signup, authenticate) & user views (are we seeing correct home page with logged in / out users)
