@@ -154,4 +154,3 @@ class UserModelTestCase(TestCase):
         user_1 = User.query.get(self.test_u1_id)
 
         self.assertFalse(user_1.authenticate("123","pass1"))
-

@@ -68,7 +68,7 @@ def signup():
 
     If form not valid, present form.
 
-    If the there already is a user with that username: flash message
+    If there already is a user with that username: flash message
     and re-present form.
     """
     
@@ -108,6 +108,7 @@ def login():
 
         if user:
             do_login(user)
+
             return redirect("/")
 
         flash("Invalid credentials.", 'danger')
@@ -127,6 +128,7 @@ def logout():
 
     if form.validate_on_submit():
         do_logout()
+        flash("User logout successful", 'success')
     
     return redirect("/")
 

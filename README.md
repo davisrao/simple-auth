@@ -20,15 +20,16 @@ INSTALLING DEPENDENCIES:
 * create .env file with SECRET_KEY=abc123 & DATABASE_URL=postgresql:///warbler
 
 TEST NOTES:
-* Tests exist for user model (repr, signup, authenticate) & user views (are we seeing correct home page with logged in / out users). 
+* Tests exist for user model (repr, signup, authenticate) & user views (are we seeing correct home page with logged in / out users)
 
 RUNNING TESTS:
 * for test_user_views.py file: enter this in command line FLASK_ENV=production python -m unittest test_user_views.py
 * for test_user_model.py: python -m unittest test_user_model.py
 
 TODO - What would I do here with more time?
-* edit user credentials / information
 * mobile view - it's responsive but the buttons and text are small on cell phones. just want to update that.
-* style is basic bootstrap - can be improved. The logout style and signup / login styles are slightly different which needs to be made uniform
+* edit user credentials / information form. 
+* style is basic bootstrap and can definitely be improved. Forms have too little spacing. 
+* logout style and signup / login styles are slightly different which needs to be made uniform
 * do something cooler with the home page :)
 * 404 page is nothing special - I would want to style that a little better.
