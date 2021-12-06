@@ -4,25 +4,25 @@
 {% block content %}
 
 
-  <div class="row text-center col-md-6 col-lg-6">
+<div class="row text-center col-md-6 col-lg-6">
     <h2>Join Now</h2>
-    
+
     {% for category, message in get_flashed_messages(with_categories=True) %}
     <div class=" col-12 alert alert-{{ category }}">{{ message }}</div>
     {% endfor %}
 
     <form method="POST" id="user_form">
-      {{ form.hidden_tag() }}
+        {{ form.hidden_tag() }}
 
-      {% for field in form if field.widget.input_type != 'hidden' %}
-      {% for error in field.errors %}
-      <span class="text-danger">{{ error }}</span>
-      {% endfor %}
-      {{ field(placeholder=field.label.text, class="form-control") }}
-      {% endfor %}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+        {% for error in field.errors %}
+        <span class="text-danger">{{ error }}</span>
+        {% endfor %}
+        {{ field(placeholder=field.label.text, class="form-control") }}
+        {% endfor %}
 
-      <button class="btn btn-primary btn-lg btn-block">Sign Up!</button>
+        <button class="btn btn-primary btn-lg btn-block">Sign Up!</button>
     </form>
-  </div>
+</div>
 
 {% endblock %}
