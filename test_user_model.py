@@ -11,18 +11,19 @@ from models import db, User
 from flask_bcrypt import Bcrypt
 from sqlalchemy import exc
 
-# BEFORE we import our app, let's set an environmental variable
-# to use a different database for tests (we need to do this
-# before we import our app, since that will have already
-# connected to the database
+# Setting env variable to use different DB for tests.
+# need to do before the app is imported.
 
 os.environ['DATABASE_URL'] = "postgresql:///simple_auth_test"
 
+#now we can import app
 from app import app
 
 bcrypt = Bcrypt()
 
-#done only once then tables are 'refreshed' on each
+# Create our tables once
+# after / before each we'll refresh the data inside
+
 db.create_all()
 
 class UserModelTestCase(TestCase):
@@ -58,13 +59,14 @@ class UserModelTestCase(TestCase):
 
         db.session.commit()
 
-        #not sure what we are gonna get as ID because auto incrementing primary key so grabbing here
+        #grabbing here as we are not sure what we are gonna get as ID because 
+        # of auto incrementing primary key
         self.test_u1_id = test_u1.id
         self.test_u2_id = test_u2.id
         self.test_u3_id = test_u3.id
     
     def tearDown(self):
-        """Stuff to do after every test."""
+        """Roll back after each test"""
         db.session.rollback()
 
 
