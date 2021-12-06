@@ -23,10 +23,11 @@ TEST NOTES:
 * Tests exist for user model & user views. 
 
 RUNNING TESTS:
-* for test_user_views.py file: enter this in command line FLASK_ENV=production python -m unittest test_message_views.py
+* for test_user_views.py file: enter this in command line FLASK_ENV=production python -m unittest test_user_views.py
 * for test_user_model.py: python -m unittest test_user_model.py
 
 TODO - What would I do here with more time?
 * edit user credentials / information
+* mobile view - it's responsive but the buttons and text are small on cell phones. just want to update that.
 * style is basic bootstrap - can be improved
 * do something cooler with the home page :)
